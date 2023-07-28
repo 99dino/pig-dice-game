@@ -32,3 +32,19 @@ roll.addEventListener("click", () => {
     document.getElementById(`current--${turn}`).textContent = currentscore;
   }
 });
+
+hold.addEventListener("click", () => {
+  if (playing) {
+    score[turn] += currentscore;
+    document.getElementById(`score--${turn}`).textContent = score[turn];
+    if (score[turn] >= 20) {
+      playing = false;
+      dice.classList.add("hidden");
+      document
+        .querySelector(`.player--${turn}`)
+        .classList.add("player--winner");
+    } else {
+      switchturn();
+    }
+  }
+});
