@@ -18,3 +18,17 @@ dice.classList.add("hidden");
 const hold = document.querySelector(".btn--hold");
 const roll = document.querySelector(".btn--roll");
 const newgame = document.querySelector(".btn--new");
+
+roll.addEventListener("click", () => {
+  if (playing) {
+    const rand = Math.trunc(Math.random() * 6) + 1;
+    dice.src = `dice-${rand}.png`;
+    dice.classList.remove("hidden");
+    if (rand === 1) {
+      switchturn();
+    } else {
+      currentscore += rand;
+    }
+    document.getElementById(`current--${turn}`).textContent = currentscore;
+  }
+});
