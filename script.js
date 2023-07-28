@@ -75,3 +75,7 @@ const init = function () {
   player0.classList.remove("player--winner");
   player1.classList.remove("player--winner");
 };
+
+init();
+
+newgame.addEventListener("click", init);
