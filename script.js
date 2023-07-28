@@ -31,7 +31,7 @@ const switchturn = function () {
 roll.addEventListener("click", () => {
   if (playing) {
     const rand = Math.trunc(Math.random() * 6) + 1;
-    dice.src = `dice-${rand}.png`;
+    dice.src = `img/dice-${rand}.png`;
     dice.classList.remove("hidden");
     if (rand === 1) {
       switchturn();
