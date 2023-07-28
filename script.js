@@ -19,6 +19,15 @@ const hold = document.querySelector(".btn--hold");
 const roll = document.querySelector(".btn--roll");
 const newgame = document.querySelector(".btn--new");
 
+// switching takes place
+const switchturn = function () {
+  currentscore = 0;
+  document.getElementById(`current--${turn}`).textContent = currentscore;
+  document.querySelector(`.player--${turn}`).classList.remove("player--active");
+  turn = (turn + 1) % 2;
+  document.querySelector(`.player--${turn}`).classList.add("player--active");
+};
+
 roll.addEventListener("click", () => {
   if (playing) {
     const rand = Math.trunc(Math.random() * 6) + 1;
