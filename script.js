@@ -57,3 +57,21 @@ hold.addEventListener("click", () => {
     }
   }
 });
+
+const init = function () {
+  currentscore = 0;
+  turn = 0;
+  score = [0, 0];
+  playing = true;
+
+  playing = true;
+  score0.textContent = 0;
+  score1.textContent = 0;
+  currentscore0.textContent = 0;
+  currentscore1.textContent = 0;
+  dice.classList.add("hidden");
+  player0.classList.add("player--active");
+  player1.classList.remove("player--active");
+  player0.classList.remove("player--winner");
+  player1.classList.remove("player--winner");
+};
